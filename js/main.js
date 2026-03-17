@@ -85,3 +85,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+function connect(){
+
+const params = new URLSearchParams(window.location.search);
+
+const client = params.get("client");
+const token = params.get("token");
+
+if(!client || !token){
+alert("Invalid onboarding link");
+return;
+}
+
+window.location.href =
+"https://backend.onesite.co.in/oauth/start?client=" +
+client +
+"&token=" +
+token;
+
+}
+
+
